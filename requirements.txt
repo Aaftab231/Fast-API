@@ -5,3 +5,5 @@ pymysql
 cryptography
 passlib
 bcrypt
+python-jose
+python-multipart

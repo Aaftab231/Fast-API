@@ -16,3 +16,7 @@ def show_user(id: int, db: Session):
     if not users:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User with id {id} is not found.")
     return users
+
+def show_all(db: Session):
+    user = db.query(models.User).all()
+    return user

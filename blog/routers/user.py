@@ -18,3 +18,7 @@ def create_user(request: schemas.User, db: Session = Depends(get_db)):
 @router.get("/{id}", response_model=schemas.ShowUser, status_code=status.HTTP_200_OK)
 def show_user(id: int, db: Session = Depends(get_db)):
     return user.show_user(id, db)
+
+@router.get("/", response_model=schemas.User, status_code=status.HTTP_200_OK)
+def show_all(db: Session = Depends(get_db)):
+    return user.show_all(db)
